@@ -4,58 +4,69 @@ import javax.persistence.*;
 
 @Entity
 @SqlResultSetMapping(name = "CliInfo", classes = @ConstructorResult(targetClass = Cliente.class, columns = {
-        @ColumnResult(name = "RUTCLIENTE", type = String.class),
-        @ColumnResult(name = "NOMBRE", type = String.class),
-        @ColumnResult(name = "TELEFONO", type = Integer.class),
-        @ColumnResult(name = "ESTADO", type = String.class)
+        @ColumnResult(name = "RUT_CLIENTE", type = String.class),
+        @ColumnResult(name = "NOMBRE_CLI", type = String.class),
+        @ColumnResult(name = "NOMBRE_CLI", type = String.class),
+        @ColumnResult(name = "TELEFONO_CLI", type = int.class),
+        @ColumnResult(name = "LOGIN_USER_ID", type = int.class)
 }))
 public class Cliente {
     public static final String NameQuery_LIST_CLIENTES = "listclientes";
     @Id
-    private String RUTCLIENTE;
-    private String NOMBRE;
-    private int TELEFONO;
-    private String ESTADO;
+    private String RUT_CLIENTE;
+    private String NOMBRE_CLI;
+    private String APELLIDO_CLI;
+    private int TELEFONO_CLI;
+    private int LOGIN_USER_ID;
 
     public Cliente() {
     }
 
-    public Cliente(String RUTCLIENTE, String NOMBRE, int TELEFONO, String ESTADO) {
-        this.RUTCLIENTE = RUTCLIENTE;
-        this.NOMBRE = NOMBRE;
-        this.TELEFONO = TELEFONO;
-        this.ESTADO = ESTADO;
+    public Cliente(String RUT_CLIENTE, String NOMBRE_CLI, String APELLIDO_CLI, int TELEFONO_CLI, int LOGIN_USER_ID) {
+        this.RUT_CLIENTE = RUT_CLIENTE;
+        this.NOMBRE_CLI = NOMBRE_CLI;
+        this.APELLIDO_CLI = APELLIDO_CLI;
+        this.TELEFONO_CLI = TELEFONO_CLI;
+        this.LOGIN_USER_ID = LOGIN_USER_ID;
     }
 
-    public String getRUTCLIENTE() {
-        return RUTCLIENTE;
+    public String getRUT_CLIENTE() {
+        return RUT_CLIENTE;
     }
 
-    public void setRUTCLIENTE(String RUTCLIENTE) {
-        this.RUTCLIENTE = RUTCLIENTE;
+    public void setRUT_CLIENTE(String RUT_CLIENTE) {
+        this.RUT_CLIENTE = RUT_CLIENTE;
     }
 
-    public String getNOMBRE() {
-        return NOMBRE;
+    public String getNOMBRE_CLI() {
+        return NOMBRE_CLI;
     }
 
-    public void setNOMBRE(String NOMBRE) {
-        this.NOMBRE = NOMBRE;
+    public void setNOMBRE_CLI(String NOMBRE_CLI) {
+        this.NOMBRE_CLI = NOMBRE_CLI;
     }
 
-    public int getTELEFONO() {
-        return TELEFONO;
+    public String getAPELLIDO_CLI() {
+        return APELLIDO_CLI;
     }
 
-    public void setTELEFONO(int TELEFONO) {
-        this.TELEFONO = TELEFONO;
+    public void setAPELLIDO_CLI(String APELLIDO_CLI) {
+        this.APELLIDO_CLI = APELLIDO_CLI;
     }
 
-    public String getESTADO() {
-        return ESTADO;
+    public int getTELEFONO_CLI() {
+        return TELEFONO_CLI;
     }
 
-    public void setESTADO(String ESTADO) {
-        this.ESTADO = ESTADO;
+    public void setTELEFONO_CLI(int TELEFONO_CLI) {
+        this.TELEFONO_CLI = TELEFONO_CLI;
+    }
+
+    public int getLOGIN_USER_ID() {
+        return LOGIN_USER_ID;
+    }
+
+    public void setLOGIN_USER_ID(int LOGIN_USER_ID) {
+        this.LOGIN_USER_ID = LOGIN_USER_ID;
     }
 }

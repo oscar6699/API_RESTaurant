@@ -24,7 +24,7 @@ public class ClienteService {
     }
 
     public void saveProcedure(Cliente cliente){
-        clienteRepository.saveProcedure(cliente.getRUTCLIENTE(),cliente.getNOMBRE(),cliente.getTELEFONO(),cliente.getESTADO());
+        clienteRepository.saveProcedure(cliente.getRUT_CLIENTE(),cliente.getNOMBRE_CLI(),cliente.getAPELLIDO_CLI(),cliente.getTELEFONO_CLI(), cliente.getLOGIN_USER_ID());
     }
 
     public void deleteCliente(String id){
