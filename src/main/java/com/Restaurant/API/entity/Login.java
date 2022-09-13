@@ -25,6 +25,11 @@ public class Login {
         this.USER_PASS = USER_PASS;
     }
 
+    public Login(String USER_NAME, String USER_PASS) {
+        this.USER_ID = 0;
+        this.USER_NAME = USER_NAME;
+        this.USER_PASS = USER_PASS;
+    }
     public int getUSER_ID() {
         return USER_ID;
     }

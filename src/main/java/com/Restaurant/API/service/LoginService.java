@@ -21,7 +21,11 @@ public class LoginService {
     public Optional<Login> BuscarLogin(int id){return loginRepository.findById(id);}
 
     public void saveProcedure(Login login){
-        loginRepository.saveProcedure(login.getUSER_NAME(),login.getUSER_PASS());
+        try{
+            loginRepository.saveProcedure(login.getUSER_NAME(),login.getUSER_PASS());
+        }catch (Exception e){
+            throw e;
+        }
     }
 
     public void deleteLogin(int id){

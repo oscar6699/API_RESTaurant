@@ -33,8 +33,25 @@ public class LoginController {
 
     @PostMapping("/nuevo")
     public ResponseEntity<?> save(@PathVariable Login login){
-        loginService.saveProcedure(login);
+        try{
+            loginService.saveProcedure(login);
+        }catch(Exception e){
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.CREATED);
+        }
+
         return new ResponseEntity<>("Login Borrado", HttpStatus.CREATED);
+    }
+
+    @PostMapping("/nuevo2/{username}/{password}")
+    public ResponseEntity<?> save2(@PathVariable("username") String username, @PathVariable("password") String password){
+        try{
+            Login login = new Login(username,password);
+            loginService.saveProcedure(login);
+        }catch(Exception e){
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.CREATED);
+        }
+
+        return new ResponseEntity<>("Login Creado", HttpStatus.CREATED);
     }
 
     @DeleteMapping("borrar/{id}")
